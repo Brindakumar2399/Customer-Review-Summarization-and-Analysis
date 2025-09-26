@@ -1,45 +1,45 @@
-# 📝 Customer Review Summarization and Analysis
+# 📝 Customer Review Analysis & Summarization
 
 ## 📌 Project Overview
 
-This project develops an **abstractive text summarization model** to condense **Amazon Fine Food Reviews** into concise summaries. Instead of extracting sentences, the model generates new phrases that capture the meaning of the original review, helping users quickly understand customer opinions.
+This project analyzes **Amazon Fine Food Reviews** to extract insights about customer sentiment, product experience, and recurring themes. Using **abstractive summarization**, the project condenses long reviews into short, meaningful summaries, making it easier to understand large volumes of unstructured feedback.
 
-The project demonstrates a full pipeline from **data preprocessing** to **model training and evaluation**, showcasing how unstructured customer feedback can be systematically analyzed.
+The workflow combines **data preprocessing, exploratory analysis, and automated summarization** to demonstrate how raw customer feedback can be turned into structured insights.
 
 ---
 
 ## 📂 Repository Contents
 
-* `Data_Pre_Processing.ipynb` → Cleans and tokenizes raw reviews, builds vocabulary, integrates GloVe embeddings
-* `Summarization.ipynb` → Defines and trains the Seq2Seq model with attention, evaluates results, generates summaries
-* `POSTER.pptx` → Presentation summarizing the workflow, methodology, and findings
+* `Data_Pre_Processing.ipynb` → Prepares the dataset (cleaning, tokenization, embedding integration)
+* `Summarization.ipynb` → Generates summaries, evaluates results, and provides examples
+* `POSTER.pptx` → Visual summary of the project workflow and key findings
 
 ---
 
-## 🔄 Workflow
+## 🔄 Data Analysis Workflow
 
 1. **Data Preprocessing**
 
-   * Cleaned and tokenized Amazon Fine Food Reviews dataset
-   * Built vocabulary and mapped words to **GloVe embeddings**
-   * Batched and organized data for efficient training
+   * Cleaned text (removal of stopwords, special characters, duplicates)
+   * Tokenization and vocabulary creation
+   * Integration of **GloVe word embeddings** for semantic representation
 
-2. **Model Architecture**
+2. **Exploratory Review Analysis**
 
-   * **Sequence-to-Sequence (Seq2Seq)** with bi-directional **LSTM encoder**
-   * **LSTM decoder** with **local attention** for contextual abstraction
+   * Word frequency and sentiment distribution
+   * Identification of recurring product themes (e.g., taste, delivery, packaging)
+   * Length and structure of reviews
 
-3. **Training & Optimization**
+3. **Summarization**
 
-   * **Adam optimizer** with gradient clipping
-   * **Dropout** for regularization
-   * **Early stopping** to avoid overfitting
-   * **Cross-entropy loss with L2 regularization**
+   * Applied a **sequence-to-sequence model with attention** to generate summaries
+   * Compared model summaries with original reviews to evaluate effectiveness
 
 4. **Evaluation**
 
-   * Metrics: loss, accuracy, validation performance
-   * Model checkpointing for best-performing runs
+   * Measured conciseness (summary length vs. original)
+   * Tracked coverage of key themes (e.g., product quality, service)
+   * Reported performance metrics (loss, accuracy, ROUGE scores)
 
 ---
 
@@ -55,31 +55,46 @@ The project demonstrates a full pipeline from **data preprocessing** to **model 
 
 ---
 
+## 📈 Key Performance Indicators (KPIs)
+
+* **Data KPIs**
+
+  * Total reviews analyzed
+  * Vocabulary size and coverage
+  * Distribution of sentiment (positive vs. negative reviews)
+
+* **Summarization KPIs**
+
+  * Average review length vs. average summary length
+  * ROUGE-1, ROUGE-2, ROUGE-L scores (summary overlap with references)
+  * Perplexity (model predictive quality)
+
+* **Insight KPIs**
+
+  * % of reviews mentioning delivery, packaging, or taste
+  * Frequency of positive vs. negative product attributes
+  * Time saved by auto-summarization (scaling manual review effort)
+
+---
+
 ## 📈 Applications
 
-* Summarizing large volumes of **customer reviews**
-* Extracting **product feedback** efficiently
-* Enabling quick scanning of sentiment and recurring issues
+* **Customer Feedback Analysis** → Quickly identify what customers like/dislike
+* **Product Improvement** → Spot recurring issues across thousands of reviews
+* **Business Intelligence** → Condense feedback for reporting & decision-making
+* **Sentiment Tracking** → Monitor changes in satisfaction over time
 
 ---
 
 ## 🛠️ Tools & Libraries
 
-* **Python**
-* **TensorFlow / Keras**
-* **NLTK / spaCy**
-* **GloVe embeddings**
+* **Python** → For analysis and modeling
+* **Pandas / NumPy** → data wrangling, cleaning, and transformation
+* **Matplotlib** → exploratory data analysis and visualization
+* **NLTK / spaCy** → natural language processing for text cleaning, tokenization, and sentiment cues
+* **GloVe embeddings** → pre-trained word embeddings for semantic representation
+* **TensorFlow / Keras** → sequence-to-sequence model with attention for summarization
 
----
 
-## 👥 Team
 
-Developed by:
-
-* Brinda Kumar
-* Kishan Terdal
-
-Under the guidance of **Prof. Lu Xiao**
-
----
 
